@@ -2,8 +2,48 @@
 
 <html>
 <head>
+    <base href="{{baseUrl}}"/>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>T-Challenge</title>
+
+    <link rel="icon" type="image/png" href="static/images/favicon.ico">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="static/styles/reset.css"/>
+    <link rel="stylesheet" href="static/styles/common.css"/>
 </head>
 <body>
-<h1>T-Challenge: Internal Web Client</h1>
+
+<ui-view></ui-view>
+
+<!-- CDN -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.3/angular-ui-router.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+
+<!-- SECURITY -->
+<script src="static/components/security/security.module.js"></script>
+
+<!-- UTILITY -->
+<script src="static/components/utility/utility.module.js"></script>
+<script src="static/components/utility/authorized-view.component.js"></script>
+<script src="static/components/utility/authorized-view.controller.js"></script>
+<script src="static/components/utility/root-view.component.js"></script>
+<script src="static/components/utility/root-view.controller.js"></script>
+
+<!-- APPLICATION -->
+<script src="static/components/application.module.js"></script>
+<script src="static/components/application.config.js"></script>
+<script src="static/components/application.routes.js"></script>
+
+<!-- MAIN -->
+<script src="static/main.js"></script>
 </body>
 </html>

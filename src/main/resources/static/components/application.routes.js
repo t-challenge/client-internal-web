@@ -46,6 +46,25 @@
                 }
             })
 
+            .state('root.authorized.candidate', {
+                abstract: true,
+                url: 'candidates',
+                views: {
+                    '@root.authorized': {
+                        component: 'candidateSectionView'
+                    }
+                }
+            })
+
+            .state('root.authorized.candidate.list', {
+                url: '',
+                views: {
+                    '@root.authorized.candidate': {
+                        component: 'candidateListView'
+                    }
+                }
+            })
+
             .state('root.lost', {
                 url: '*path',
                 views: {

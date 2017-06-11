@@ -30,8 +30,8 @@
             $state.go('root.authorized.statistic');
         };
 
-        self.navigateCandidateSpace = function () {
-            $state.go('root.authorized.candidateSpace');
+        self.navigateCandidateSection = function () {
+            $state.go('root.authorized.candidate.list');
         };
 
         self.navigateEventSpace = function () {

@@ -4,7 +4,7 @@
 
     angular
         .module('application.security')
-        .controller('authenticationContextService', [
+        .service('authenticationContextService', [
             AuthenticationContextService
         ]);
 

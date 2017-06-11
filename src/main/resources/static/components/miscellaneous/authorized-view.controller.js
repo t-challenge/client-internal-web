@@ -9,7 +9,7 @@
             'authenticationService',
             AuthorizedViewController]);
 
-    function AuthorizedViewController($http,
+    function AuthorizedViewController($state,
                                       authenticateService) {
 
         var self = this;

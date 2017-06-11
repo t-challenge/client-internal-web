@@ -24,10 +24,11 @@
     function httpRequestInterceptor($localStorage) {
         return {
             request: function (config) {
-                var token = $localStorage.securityToken;
-                console.log("interceptor: " + token);
-                if (token) {
+                var authentication = $localStorage.authentication;
+                if (authentication) {
+                    var token = authentication.token;
                     config.headers['T-Challenge-Security-Token'] = token;
+                    console.log("interceptor: " + token);
                 }
                 return config;
             }

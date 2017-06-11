@@ -46,8 +46,8 @@
             $state.go('root.authorized.workbookSpace');
         };
 
-        self.navigateProfileSpace = function () {
-            $state.go('root.authorized.profileSpace');
+        self.navigateProfileSection = function () {
+            $state.go('root.authorized.profile');
         };
 
         self.deauthenticate = function () {

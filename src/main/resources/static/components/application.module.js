@@ -8,6 +8,7 @@
             'ngStorage',
             'application.candidate',
             'application.miscellaneous',
+            'application.profile',
             'application.statistic'
         ]);
 })();

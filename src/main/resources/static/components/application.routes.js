@@ -46,6 +46,15 @@
                 }
             })
 
+            .state('root.authorized.profile', {
+                url: 'profile',
+                views: {
+                    '@root.authorized': {
+                        component: 'profileSectionView'
+                    }
+                }
+            })
+
             .state('root.authorized.candidate', {
                 abstract: true,
                 url: 'candidates',

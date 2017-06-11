@@ -4,19 +4,9 @@
 
     angular
         .module('application.miscellaneous')
-        .controller('authorizedViewController', [
-            '$state',
-            'authenticationService',
-            AuthorizedViewController]);
+        .controller('authorizedViewController', [AuthorizedViewController]);
 
-    function AuthorizedViewController($state,
-                                      authenticateService) {
+    function AuthorizedViewController() {
 
-        var self = this;
-
-        self.deauthenticate = function () {
-            authenticateService.deauthenticate();
-            $state.go('root.login');
-        };
     }
 })();

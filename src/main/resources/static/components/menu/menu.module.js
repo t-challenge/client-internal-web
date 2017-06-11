@@ -3,9 +3,8 @@
     'use strict';
 
     angular
-        .module('application.miscellaneous', [
+        .module('application.menu', [
             'ui.router',
-            'application.menu',
             'application.security',
             'application.utility'
         ]);

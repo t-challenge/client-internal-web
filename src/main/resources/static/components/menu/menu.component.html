@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">T-Challenge</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active: self.menuState == 'homeSpace'}"><a ng-click="self.navigateHomeSpace()">Главная</a></li>
+                <li ng-class="{active: self.menuState == 'candidateSpace'}"><a ng-click="self.navigateCandidateSpace()">Кандидаты</a></li>
+                <li ng-class="{active: self.menuState == 'eventSpace'}"><a ng-click="self.navigateEventSpace()">События</a></li>
+                <li ng-class="{active: self.menuState == 'taskSpace'}"><a ng-click="self.navigateTaskSpace()">Задачи</a></li>
+                <li ng-class="{active: self.menuState == 'workbookSpace'}"><a ng-click="self.navigateWorkbookSpace()">Тетради</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{active: self.menuState == 'profileSpace'}"><a ng-click="self.navigateProfileSpace()">{{self.profile}}</a></li>
+                <li><a ng-click="self.deauthenticate()">Выйти</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

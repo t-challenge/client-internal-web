@@ -40,7 +40,7 @@
             .state('root.authorized.home', {
                 url: 'home',
                 views: {
-                    '@authorized': {
+                    '@root.authorized': {
                         component: 'homeView'
                     }
                 }

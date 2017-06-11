@@ -8,6 +8,10 @@
                 $locationProvider.html5Mode(true);
             }
         ])
+        .config(['$urlMatcherFactoryProvider', function ($urlMatcherFactoryProvider) {
+            $urlMatcherFactoryProvider.strictMode(false);
+        }
+        ])
         .factory('httpRequestInterceptor', [
             '$localStorage',
             httpRequestInterceptor

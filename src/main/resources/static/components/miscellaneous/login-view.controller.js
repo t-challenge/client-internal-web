@@ -49,7 +49,7 @@
         };
 
         function handleSuccessfulAuthentication() {
-            $state.go('root');
+            $state.go('root.authorized.home');
         }
 
         function handleFailedAuthentication() {

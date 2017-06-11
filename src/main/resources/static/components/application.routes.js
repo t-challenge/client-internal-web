@@ -11,6 +11,7 @@
         $stateProvider
 
             .state('root', {
+                abstract: true,
                 url: '/',
                 views: {
                     '': {
@@ -33,6 +34,15 @@
                 views: {
                     '@root': {
                         component: 'authorizedView'
+                    }
+                }
+            })
+
+            .state('root.authorized.home', {
+                url: 'home',
+                views: {
+                    '@authorized': {
+                        component: 'homeView'
                     }
                 }
             });

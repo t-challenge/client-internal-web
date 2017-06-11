@@ -6,14 +6,18 @@
         .module('application.miscellaneous')
         .controller('rootViewController', [
             '$state',
+            'authenticationContextService',
             RootViewController]);
 
-    function RootViewController($state) {
+    function RootViewController($state,
+                                authenticationContextService) {
 
         var self = this;
 
         self.$onInit = function () {
-            if ($state.is('root')) {
+            if (!authenticationContextService.getAuthentication()) {
+                $state.go('root.login');
+            } else if ($state.is('root')) {
                 $state.go('root.authorized.statistic');
             }
         };

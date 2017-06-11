@@ -45,6 +45,15 @@
                         component: 'homeView'
                     }
                 }
+            })
+
+            .state('root.lost', {
+                url: '*path',
+                views: {
+                    '@root': {
+                        component: 'lostView'
+                    }
+                }
             });
     }
 })();

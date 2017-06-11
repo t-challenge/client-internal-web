@@ -34,16 +34,16 @@
             $state.go('root.authorized.candidate.list');
         };
 
-        self.navigateEventSpace = function () {
-            $state.go('root.authorized.eventSpace');
+        self.navigateEventSection = function () {
+            $state.go('root.authorized.event.list');
         };
 
-        self.navigateTaskSpace = function () {
-            $state.go('root.authorized.taskSpace');
+        self.navigateTaskSection = function () {
+            $state.go('root.authorized.task.list');
         };
 
-        self.navigateWorkbookSpace = function () {
-            $state.go('root.authorized.workbookSpace');
+        self.navigateWorkbookSection = function () {
+            $state.go('root.authorized.workbook.list');
         };
 
         self.navigateProfileSection = function () {

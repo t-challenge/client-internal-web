@@ -14,7 +14,7 @@
         var self = this;
 
         self.navigateHome = function () {
-            $state.go('root.authorized.home');
+            $state.go('root.authorized.statistic');
         };
     }
 })();

@@ -6,6 +6,7 @@
         .module('application', [
             'ui.router',
             'ngStorage',
-            'application.miscellaneous'
+            'application.miscellaneous',
+            'application.statistic'
         ]);
 })();

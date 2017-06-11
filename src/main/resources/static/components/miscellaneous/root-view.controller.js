@@ -14,7 +14,7 @@
 
         self.$onInit = function () {
             if ($state.is('root')) {
-                $state.go('root.authorized.home');
+                $state.go('root.authorized.statistic');
             }
         };
     }

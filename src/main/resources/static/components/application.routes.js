@@ -37,11 +37,11 @@
                 }
             })
 
-            .state('root.authorized.home', {
-                url: 'home',
+            .state('root.authorized.statistic', {
+                url: 'statistic',
                 views: {
                     '@root.authorized': {
-                        component: 'homeView'
+                        component: 'statisticSpaceView'
                     }
                 }
             })

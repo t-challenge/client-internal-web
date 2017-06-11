@@ -26,8 +26,8 @@
             }
         };
 
-        self.navigateHomeSpace = function () {
-            $state.go('root.authorized.home');
+        self.navigateStatisticSpace = function () {
+            $state.go('root.authorized.statistic');
         };
 
         self.navigateCandidateSpace = function () {

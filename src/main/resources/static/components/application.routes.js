@@ -11,7 +11,6 @@
         $stateProvider
 
             .state('root', {
-                abstract: true,
                 url: '/',
                 views: {
                     '': {

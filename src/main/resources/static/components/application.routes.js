@@ -74,6 +74,25 @@
                 }
             })
 
+            .state('root.authorized.event', {
+                abstract: true,
+                url: 'events',
+                views: {
+                    '@root.authorized': {
+                        component: 'eventSectionView'
+                    }
+                }
+            })
+
+            .state('root.authorized.event.list', {
+                url: '',
+                views: {
+                    '@root.authorized.event': {
+                        component: 'eventListView'
+                    }
+                }
+            })
+
             .state('root.lost', {
                 url: '*path',
                 views: {

@@ -5,25 +5,31 @@
     angular
         .module('application.security')
         .service('authenticationContextService', [
+            '$localStorage',
             AuthenticationContextService
         ]);
 
-    function AuthenticationContextService() {
+    function AuthenticationContextService($localStorage) {
 
         var self = this;
 
         self.getAuthentication = function () {
+            if (!self.authentication) {
+                self.authentication = $localStorage.authentication;
+            }
             return self.authentication;
         };
 
         self.setAuthentication = function (authentication) {
-            console.log("INFO: authentication context set");
             self.authentication = authentication;
+            $localStorage.authentication = authentication;
+            console.log("INFO: authentication context set");
         };
 
         self.reset = function (authentication) {
-            console.log("INFO: authentication context reset");
             self.authentication = null;
+            $localStorage.authentication = null;
+            console.log("INFO: authentication context reset");
         };
     }
 })();

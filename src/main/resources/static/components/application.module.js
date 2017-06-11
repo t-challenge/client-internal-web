@@ -11,6 +11,7 @@
             'application.miscellaneous',
             'application.profile',
             'application.statistic',
-            'application.task'
+            'application.task',
+            'application.workbook'
         ]);
 })();

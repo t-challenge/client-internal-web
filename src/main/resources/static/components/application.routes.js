@@ -112,6 +112,25 @@
                 }
             })
 
+            .state('root.authorized.workbook', {
+                abstract: true,
+                url: 'workbooks',
+                views: {
+                    '@root.authorized': {
+                        component: 'workbookSectionView'
+                    }
+                }
+            })
+
+            .state('root.authorized.workbook.list', {
+                url: '',
+                views: {
+                    '@root.authorized.workbook': {
+                        component: 'workbookListView'
+                    }
+                }
+            })
+
             .state('root.lost', {
                 url: '*path',
                 views: {

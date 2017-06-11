@@ -1,0 +1,18 @@
+<input
+        ng-model="self.login"
+        type="text"
+        placeholder="например, ivan.petrov@gmail.com"/>
+<br/>
+
+<input
+        ng-model="self.secret"
+        type="password"/>
+<br/>
+
+<input
+        ng-click="self.authenticate()"
+        type="button"
+        value="Войти"/>
+<br/>
+
+<span ng-if="self.error">{{self.error}}</span>

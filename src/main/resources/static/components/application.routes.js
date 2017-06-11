@@ -19,6 +19,15 @@
                 }
             })
 
+            .state('root.login', {
+                url: 'login',
+                views: {
+                    '@root': {
+                        component: 'loginView'
+                    }
+                }
+            })
+
             .state('root.authorized', {
                 abstract: true,
                 views: {

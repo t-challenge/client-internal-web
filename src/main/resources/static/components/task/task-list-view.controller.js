@@ -4,7 +4,7 @@
 
     angular
         .module('application.task')
-        .controller('TaskListViewController', [TaskListViewController]);
+        .controller('taskListViewController', [TaskListViewController]);
 
     function TaskListViewController() {
 

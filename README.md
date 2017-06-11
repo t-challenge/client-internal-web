@@ -1,2 +1,1 @@
-# tchallenge-client-internal-web
-T-Challenge: Internal Web Client
+# T-Challenge: Internal Web Client

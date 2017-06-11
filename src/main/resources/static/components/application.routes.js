@@ -38,10 +38,10 @@
             })
 
             .state('root.authorized.statistic', {
-                url: 'statistic',
+                url: 'statistics',
                 views: {
                     '@root.authorized': {
-                        component: 'statisticSpaceView'
+                        component: 'statisticSectionView'
                     }
                 }
             })

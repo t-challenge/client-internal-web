@@ -26,7 +26,7 @@
             }
         };
 
-        self.navigateStatisticSpace = function () {
+        self.navigateStatisticSection = function () {
             $state.go('root.authorized.statistic');
         };
 

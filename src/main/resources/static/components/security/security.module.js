@@ -3,5 +3,8 @@
     'use strict';
 
     angular
-        .module('application.security', ['ngStorage']);
+        .module('application.security', [
+            'ngStorage',
+            'application.utility'
+        ]);
 })();

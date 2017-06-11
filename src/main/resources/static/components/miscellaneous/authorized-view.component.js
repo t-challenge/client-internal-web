@@ -3,10 +3,10 @@
     'use strict';
 
     angular
-        .module('application.utility')
+        .module('application.miscellaneous')
         .component('authorizedView', {
             controller: 'authorizedViewController',
             controllerAs: 'self',
-            templateUrl: 'static/components/utility/authorized-view.component.html'
+            templateUrl: 'static/components/miscellaneous/authorized-view.component.html'
         });
 })();

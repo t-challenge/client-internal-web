@@ -3,10 +3,10 @@
     'use strict';
 
     angular
-        .module('application.utility')
+        .module('application.miscellaneous')
         .component('rootView', {
             controller: 'rootViewController',
             controllerAs: 'self',
-            templateUrl: 'static/components/utility/root-view.component.html'
+            templateUrl: 'static/components/miscellaneous/root-view.component.html'
         });
 })();

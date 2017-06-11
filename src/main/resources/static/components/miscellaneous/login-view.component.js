@@ -3,10 +3,10 @@
     'use strict';
 
     angular
-        .module('application.utility')
+        .module('application.miscellaneous')
         .component('loginView', {
             controller: 'loginViewController',
             controllerAs: 'self',
-            templateUrl: 'static/components/utility/login-view.component.html'
+            templateUrl: 'static/components/miscellaneous/login-view.component.html'
         });
 })();

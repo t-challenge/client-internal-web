@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('application.utility')
+        .module('application.miscellaneous')
         .controller('loginViewController', [
             '$state',
             'authenticationService',

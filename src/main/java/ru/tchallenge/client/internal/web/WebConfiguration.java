@@ -69,6 +69,7 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
         exclusions.add("/favicon.ico");
         final Set<String> exclusionPrefixes = new HashSet<>();
         exclusionPrefixes.add("/static");
+        exclusionPrefixes.add("/sandbox");
         return new RequestForwardFilter("/", exclusions, exclusionPrefixes);
     }
 

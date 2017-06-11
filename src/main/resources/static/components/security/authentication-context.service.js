@@ -13,7 +13,7 @@
         var self = this;
 
         self.getAuthentication = function () {
-            return authentication;
+            return self.authentication;
         };
 
         self.setAuthentication = function (authentication) {

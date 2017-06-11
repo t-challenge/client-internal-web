@@ -6,21 +6,24 @@
         .module('application.security')
         .service('authenticationService', [
             '$http',
+            'urlResolverService',
             'authenticationContextService',
             AuthenticationService
         ]);
 
     function AuthenticationService($http,
+                                   urlResolverService,
                                    authenticationContextService) {
 
         var self = this;
 
+        var url = urlResolverService.resolveKernelServiceUrl('authentication');
+
         self.authenticate = function (credential) {
 
-            // TODO: replace sandbox URL
             return $http
 
-                .post('/sandbox/authentication', credential)
+                .post(url, credential)
 
                 .then(function (response) {
                     console.log("INFO: authentication attempt succeeded");

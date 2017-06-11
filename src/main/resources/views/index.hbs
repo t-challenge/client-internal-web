@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="static/styles/common.css"/>
 </head>
 <body>
-
+<url-resolver-configurator url="{{clientUrl}}" service-kernel-url="{{serviceKernelUrl}}"></url-resolver-configurator>
 <div class="container">
     <ui-view></ui-view>
 </div>
@@ -31,6 +31,9 @@
 
 <!-- UTILITY -->
 <script src="static/components/utility/utility.module.js"></script>
+<script src="static/components/utility/url-resolver.service.js"></script>
+<script src="static/components/utility/url-resolver-configurator.component.js"></script>
+<script src="static/components/utility/url-resolver-configurator.controller.js"></script>
 
 <!-- SECURITY -->
 <script src="static/components/security/security.module.js"></script>

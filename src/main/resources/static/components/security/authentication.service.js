@@ -29,6 +29,7 @@
 
                 .catch(function (response) {
                     console.log("ERROR: authentication attempt failed");
+                    throw response;
                 });
         };
 

@@ -3,21 +3,15 @@ buildscript {
     repositories {
 
         jcenter()
-
-        maven {
-            url 'https://plugins.gradle.org/m2'
-        }
     }
 
     dependencies {
 
-        classpath 'net.ltgt.gradle:gradle-apt-plugin:0.10'
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
     }
 }
 
 apply plugin: 'java'
-apply plugin: 'net.ltgt.apt'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
@@ -49,9 +43,6 @@ dependencies {
 
     compile             group: 'com.github.jknack',             name: 'handlebars',                     version: '4.0.6'
     compile             group: 'com.google.guava',              name: 'guava',                          version: '19.0'
-
-    compileOnly         "com.google.auto.value:auto-value:1.2"
-    apt                 "com.google.auto.value:auto-value:1.2"
 
     providedRuntime     group: 'org.springframework.boot',      name: 'spring-boot-starter-tomcat'
 

@@ -60,7 +60,7 @@
         }
 
         function profileName(authentication) {
-            return authentication.login;
+            return authentication.account.login;
         }
     }
 })();

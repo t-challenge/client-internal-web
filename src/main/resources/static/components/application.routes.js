@@ -93,6 +93,25 @@
                 }
             })
 
+            .state('root.authorized.task', {
+                abstract: true,
+                url: 'tasks',
+                views: {
+                    '@root.authorized': {
+                        component: 'taskSectionView'
+                    }
+                }
+            })
+
+            .state('root.authorized.task.list', {
+                url: '',
+                views: {
+                    '@root.authorized.task': {
+                        component: 'taskListView'
+                    }
+                }
+            })
+
             .state('root.lost', {
                 url: '*path',
                 views: {

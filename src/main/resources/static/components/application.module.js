@@ -10,6 +10,7 @@
             'application.event',
             'application.miscellaneous',
             'application.profile',
-            'application.statistic'
+            'application.statistic',
+            'application.task'
         ]);
 })();

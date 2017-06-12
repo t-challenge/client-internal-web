@@ -7,6 +7,7 @@
             'ui.router',
             'ngStorage',
             'application.utility',
+            'application.account',
             'application.candidate',
             'application.event',
             'application.miscellaneous',

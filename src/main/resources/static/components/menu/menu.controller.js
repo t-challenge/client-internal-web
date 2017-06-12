@@ -52,6 +52,10 @@
             $state.go('root.authorized.workbook.list');
         };
 
+        self.navigateAccountSection = function () {
+            $state.go('root.authorized.account.list');
+        };
+
         self.navigateProfileSection = function () {
             $state.go('root.authorized.profile');
         };

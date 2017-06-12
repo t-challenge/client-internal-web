@@ -131,6 +131,25 @@
                 }
             })
 
+            .state('root.authorized.account', {
+                abstract: true,
+                url: 'accounts',
+                views: {
+                    '@root.authorized': {
+                        component: 'accountSectionView'
+                    }
+                }
+            })
+
+            .state('root.authorized.account.list', {
+                url: '',
+                views: {
+                    '@root.authorized.account': {
+                        component: 'accountListView'
+                    }
+                }
+            })
+
             .state('root.lost', {
                 url: '*path',
                 views: {

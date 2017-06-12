@@ -11,7 +11,8 @@
         .config(['$urlMatcherFactoryProvider', function ($urlMatcherFactoryProvider) {
             $urlMatcherFactoryProvider.strictMode(false);
         }
-        ])
+        ]);
+/*
         .factory('httpRequestInterceptor', [
             '$localStorage',
             'loggerService',
@@ -39,4 +40,5 @@
             }
         };
     }
+*/
 })();

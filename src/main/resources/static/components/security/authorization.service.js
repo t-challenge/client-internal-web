@@ -17,7 +17,9 @@
 
         self.employeeWithAny = function () {
             var authentication = authenticationContextService.getAuthentication();
-            var employee = authentication && authentication.employee;
+            var employee = authentication
+                && authentication.account
+                && authentication.account.employee;
             if (!employee) {
                 return false;
             }

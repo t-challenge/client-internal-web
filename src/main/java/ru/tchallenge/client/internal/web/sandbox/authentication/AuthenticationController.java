@@ -15,6 +15,7 @@ import com.google.common.collect.Sets;
 import ru.tchallenge.client.internal.web.sandbox.account.AccountInfo;
 import ru.tchallenge.client.internal.web.sandbox.account.EmployeeInfo;
 import ru.tchallenge.client.internal.web.sandbox.account.PersonInfo;
+import ru.tchallenge.client.internal.web.sandbox.token.TokenInfo;
 
 @RestController
 @RequestMapping(path = "/sandbox/authentication")
@@ -35,7 +36,7 @@ public class AuthenticationController {
     private AuthenticationInfo authentication(AccountInfo accountInfo) {
         AuthenticationInfo authentication = new AuthenticationInfo();
         authentication.setAccount(accountInfo);
-        authentication.setToken(UUID.randomUUID().toString());
+        authentication.setToken(token());
         return authentication;
     }
 
@@ -46,6 +47,12 @@ public class AuthenticationController {
     @PostConstruct
     private void onConstructed() {
         accounts.add(ivanov());
+    }
+
+    private TokenInfo token() {
+        TokenInfo token = new TokenInfo();
+        token.setId(UUID.randomUUID().toString());
+        return token;
     }
 
     private AccountInfo ivanov() {

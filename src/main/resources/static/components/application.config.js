@@ -31,7 +31,7 @@
             request: function (config) {
                 var authentication = $localStorage.authentication;
                 if (authentication) {
-                    var token = authentication.token;
+                    var token = authentication.token.id;
                     config.headers['T-Challenge-Security-Token'] = token;
                     loggerService.debug("HTTP interceptor applied token: " + token);
                 }

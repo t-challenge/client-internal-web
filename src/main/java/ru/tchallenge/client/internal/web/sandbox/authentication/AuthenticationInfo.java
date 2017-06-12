@@ -1,11 +1,12 @@
 package ru.tchallenge.client.internal.web.sandbox.authentication;
 
 import ru.tchallenge.client.internal.web.sandbox.account.AccountInfo;
+import ru.tchallenge.client.internal.web.sandbox.token.TokenInfo;
 
 public class AuthenticationInfo {
 
     private AccountInfo account;
-    private String token;
+    private TokenInfo token;
 
     public AccountInfo getAccount() {
         return account;
@@ -15,11 +16,11 @@ public class AuthenticationInfo {
         this.account = account;
     }
 
-    public String getToken() {
+    public TokenInfo getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(TokenInfo token) {
         this.token = token;
     }
 }

@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.common.collect.Sets;
 import ru.tchallenge.client.internal.web.sandbox.account.AccountInfo;
+import ru.tchallenge.client.internal.web.sandbox.account.EmployeeInfo;
+import ru.tchallenge.client.internal.web.sandbox.account.PersonInfo;
 
 @RestController
 @RequestMapping(path = "/sandbox/authentication")
@@ -49,6 +52,14 @@ public class AuthenticationController {
         AccountInfo account = new AccountInfo();
         account.setEmail("ivan.ivanov@mail.net");
         account.setLogin("ivan.ivanov@mail.net");
+        PersonInfo person = new PersonInfo();
+        person.setFirstname("Иван");
+        person.setLastname("Иванов");
+        person.setQuickname("Вано");
+        account.setPerson(person);
+        EmployeeInfo employee = new EmployeeInfo();
+        employee.setRoles(Sets.newHashSet("ADMIN", "TASK_MODERATOR"));
+        account.setEmployee(employee);
         return account;
     }
 }

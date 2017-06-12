@@ -11,15 +11,44 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li ng-class="{active: self.menuState == 'statisticSection'}"><a ng-click="self.navigateStatisticSection()">Статистика</a></li>
-                <li ng-class="{active: self.menuState == 'candidateSection'}"><a ng-click="self.navigateCandidateSection()">Кандидаты</a></li>
-                <li ng-class="{active: self.menuState == 'eventSection'}"><a ng-click="self.navigateEventSection()">События</a></li>
-                <li ng-class="{active: self.menuState == 'taskSection'}"><a ng-click="self.navigateTaskSection()">Задачи</a></li>
-                <li ng-class="{active: self.menuState == 'workbookSection'}"><a ng-click="self.navigateWorkbookSection()">Тетради</a></li>
-                <li ng-class="{active: self.menuState == 'accountSection'}"><a ng-click="self.navigateAccountSection()">Пользователи</a></li>
+
+                <li ng-if="self.permissions.statistic"
+                    ng-class="{active: self.menuState == 'statisticSection'}">
+                    <a ng-click="self.navigateStatisticSection()">Статистика</a>
+                </li>
+
+                <li ng-if="self.permissions.candidate"
+                    ng-class="{active: self.menuState == 'candidateSection'}">
+                    <a ng-click="self.navigateCandidateSection()">Кандидаты</a>
+                </li>
+
+                <li ng-if="self.permissions.event"
+                    ng-class="{active: self.menuState == 'eventSection'}">
+                    <a ng-click="self.navigateEventSection()">События</a>
+                </li>
+
+                <li ng-if="self.permissions.task"
+                    ng-class="{active: self.menuState == 'taskSection'}">
+                    <a ng-click="self.navigateTaskSection()">Задачи</a>
+                </li>
+
+                <li ng-if="self.permissions.workbook"
+                    ng-class="{active: self.menuState == 'workbookSection'}">
+                    <a ng-click="self.navigateWorkbookSection()">Тетради</a>
+                </li>
+
+                <li ng-if="self.permissions.account"
+                    ng-class="{active: self.menuState == 'accountSection'}">
+                    <a ng-click="self.navigateAccountSection()">Пользователи</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li ng-class="{active: self.menuState == 'profileSection'}"><a ng-click="self.navigateProfileSection()">{{self.profile}}</a></li>
+
+                <li ng-if="self.permissions.profile"
+                    ng-class="{active: self.menuState == 'profileSection'}">
+                    <a ng-click="self.navigateProfileSection()">{{self.profile}}</a>
+                </li>
+
                 <li><a ng-click="self.deauthenticate()">Выйти</a></li>
             </ul>
         </div>

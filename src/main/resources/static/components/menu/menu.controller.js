@@ -9,6 +9,7 @@
             'homeStateContextService',
             'authenticationService',
             'authenticationContextService',
+            'authorizationService',
             'menuConfiguratorService',
             MenuController]);
 
@@ -16,6 +17,7 @@
                             homeStateContextService,
                             authenticationService,
                             authenticationContextService,
+                            authorizationService,
                             menuConfiguratorService) {
 
         var self = this;
@@ -23,6 +25,7 @@
         self.$onInit = function () {
             menuConfiguratorService.registerStateListener(handleStateUpdate);
             self.authentication = authenticationContextService.getAuthentication();
+            resolvePermissions();
             if (self.authentication) {
                 self.profile = profileName(self.authentication);
             }
@@ -70,7 +73,23 @@
         }
 
         function profileName(authentication) {
-            return authentication.account.login;
+            var account = authentication.account;
+            var person = account.person;
+            return person.quickname
+                || [person.firstname, person.lastname].join(" ")
+                || account.email;
+        }
+
+        function resolvePermissions() {
+            self.permissions = {
+                statistic: authorizationService.employeeWithAny(),
+                candidate: authorizationService.employeeWithAny('CANDVIEW', 'CANDMOD'),
+                event: authorizationService.employeeWithAny('EVENTVIEW', 'EVENTMOD'),
+                task: authorizationService.employeeWithAny('TASKVIEW', 'TASKMOD'),
+                workbook: authorizationService.employeeWithAny('WBKVIEW', 'WBKMOD'),
+                account: authorizationService.employeeWithAny('USERMOD'),
+                profile: authorizationService.employeeWithAny()
+            };
         }
     }
 })();

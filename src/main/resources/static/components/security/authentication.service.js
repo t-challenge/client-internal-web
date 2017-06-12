@@ -30,9 +30,10 @@
                 .post(url, credential)
 
                 .then(function (response) {
+                    var authentication = response.data;
                     loggerService.info('authentication attempt succeeded');
-                    authenticationContextService.setAuthentication(response.data);
-                    homeStateContextService.setHomeState(homeState(response.data));
+                    authenticationContextService.setAuthentication(authentication);
+                    return authentication;
                 })
 
                 .catch(function (response) {
@@ -45,16 +46,5 @@
             authenticationContextService.reset();
             homeStateContextService.reset();
         };
-
-        function homeState(authentication) {
-            var result = 'root.authorized.candidate.list';
-            if (authentication
-                && authentication.employee
-                && authentication.employee.roles
-                && authentication.employee.roles.indexOf('TASK_MODERATOR') > -1) {
-                result = 'root.authorized.task.list';
-            }
-            return result;
-        }
     }
 })();

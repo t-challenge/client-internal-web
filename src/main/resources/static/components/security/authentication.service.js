@@ -6,12 +6,14 @@
         .module('application.security')
         .service('authenticationService', [
             '$http',
+            'loggerService',
             'urlResolverService',
             'authenticationContextService',
             AuthenticationService
         ]);
 
     function AuthenticationService($http,
+                                   loggerService,
                                    urlResolverService,
                                    authenticationContextService) {
 
@@ -26,12 +28,12 @@
                 .post(url, credential)
 
                 .then(function (response) {
-                    console.log("INFO: authentication attempt succeeded");
+                    loggerService.info('authentication attempt succeeded');
                     authenticationContextService.setAuthentication(response.data);
                 })
 
                 .catch(function (response) {
-                    console.log("ERROR: authentication attempt failed");
+                    loggerService.warn('authentication attempt failed');
                     throw response;
                 });
         };

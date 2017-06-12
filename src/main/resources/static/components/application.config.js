@@ -14,6 +14,7 @@
         ])
         .factory('httpRequestInterceptor', [
             '$localStorage',
+            'loggerService',
             httpRequestInterceptor
         ])
         .config([
@@ -25,14 +26,14 @@
         $httpProvider.interceptors.push('httpRequestInterceptor');
     }
 
-    function httpRequestInterceptor($localStorage) {
+    function httpRequestInterceptor($localStorage, loggerService) {
         return {
             request: function (config) {
                 var authentication = $localStorage.authentication;
                 if (authentication) {
                     var token = authentication.token;
                     config.headers['T-Challenge-Security-Token'] = token;
-                    console.log("interceptor: " + token);
+                    loggerService.debug("HTTP interceptor applied token: " + token);
                 }
                 return config;
             }

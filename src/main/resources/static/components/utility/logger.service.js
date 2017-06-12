@@ -10,33 +10,52 @@
 
         var self = this;
 
-        var levels = ['debug, info, warn, error'];
+        var levels = ['DEBUG, INFO, WARN, ERROR'];
+
         var configuration;
+        var defaultConfiguration = {
+            level: 'INFO'
+        };
 
         self.configure = function (newConfiguration) {
             configuration = newConfiguration;
         };
 
         self.debug = function (message) {
-            self.log('debug', message);
+            self.log('DEBUG', message);
         };
 
         self.info = function (message) {
-            self.log('info', message);
+            self.log('INFO', message);
         };
 
         self.warn = function (message) {
-            self.log('warn', message);
+            self.log('WARN', message);
         };
 
         self.error = function (message) {
-            self.log('error', message);
+            self.log('ERROR', message);
         };
 
         self.log = function (level, message) {
-            // TODO: check log level
-            // TODO: log according to level
-            console.log(message);
+            if (shouldLog(level)) {
+                if (level === 'ERROR') {
+                    console.error(message);
+                } else if (level === 'WARN') {
+                    console.warn(message)
+                } else {
+                    console.info(message);
+                }
+            }
         };
+
+        function shouldLog(level) {
+            var levelIndex = levels.indexOf(level);
+            if (configuration && configuration.level) {
+                return levelIndex >= levels.indexOf(configuration.level);
+            } else {
+                return levelIndex >= levels.indexOf(defaultConfiguration.level);
+            }
+        }
     }
 })();

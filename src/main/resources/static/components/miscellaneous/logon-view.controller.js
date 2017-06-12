@@ -6,12 +6,14 @@
         .module('application.miscellaneous')
         .controller('logonViewController', [
             '$state',
+            'homeStateContextService',
             'authenticationService',
             'authenticationContextService',
             LogonViewController
         ]);
 
     function LogonViewController($state,
+                                 homeStateContextService,
                                  authenticationService,
                                  authenticationContextService) {
 
@@ -21,6 +23,8 @@
             var authentication = authenticationContextService.getAuthentication();
             if (authentication) {
                 handleSuccessfulAuthentication();
+            } else {
+                homeStateContextService.reset();
             }
         };
 
@@ -49,7 +53,7 @@
         };
 
         function handleSuccessfulAuthentication() {
-            $state.go('root.authorized.statistic');
+            $state.go(homeStateContextService.getHomeState());
         }
 
         function handleFailedAuthentication() {

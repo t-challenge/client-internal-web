@@ -6,15 +6,17 @@
         .module('application.miscellaneous')
         .controller('lostViewController', [
             '$state',
+            'homeStateContextService',
             LostViewController
         ]);
 
-    function LostViewController($state) {
+    function LostViewController($state,
+                                homeStateContextService) {
 
         var self = this;
 
         self.navigateHome = function () {
-            $state.go('root.authorized.statistic');
+            $state.go(homeStateContextService.getHomeState());
         };
     }
 })();

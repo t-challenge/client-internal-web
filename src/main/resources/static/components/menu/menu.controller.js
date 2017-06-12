@@ -6,12 +6,14 @@
         .module('application.menu')
         .controller('menuController', [
             '$state',
+            'homeStateContextService',
             'authenticationService',
             'authenticationContextService',
             'menuConfiguratorService',
             MenuController]);
 
     function MenuController($state,
+                            homeStateContextService,
                             authenticationService,
                             authenticationContextService,
                             menuConfiguratorService) {
@@ -24,6 +26,10 @@
             if (self.authentication) {
                 self.profile = profileName(self.authentication);
             }
+        };
+
+        self.navigateHome = function () {
+            $state.go(homeStateContextService.getHomeState());
         };
 
         self.navigateStatisticSection = function () {

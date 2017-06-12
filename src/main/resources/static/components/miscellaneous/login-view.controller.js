@@ -33,7 +33,7 @@
             authenticationService
 
                 .authenticate({
-                    login: self.login,
+                    login: self.email,
                     secret: self.secret
                 })
 

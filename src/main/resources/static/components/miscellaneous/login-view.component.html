@@ -1,18 +1,35 @@
-<input
-        ng-model="self.login"
-        type="text"
-        placeholder="например, ivan.petrov@gmail.com"/>
-<br/>
+<div class="container">
 
-<input
-        ng-model="self.secret"
-        type="password"/>
-<br/>
+    <form class="form-signin">
 
-<input
-        ng-click="self.authenticate()"
-        type="button"
-        value="Войти"/>
-<br/>
+        <h2 class="form-signin-heading">Учетная запись</h2>
 
-<span ng-if="self.error">{{self.error}}</span>
+        <label for="accountEmailInput" class="sr-only">Email</label>
+        <input id="accountEmailInput"
+               ng-model="self.email"
+               type="email"
+               class="form-control"
+               placeholder="Email, например: ivan.ivanov@t-systems.ru"
+               autofocus>
+
+        <label for="accountSecretInput" class="sr-only">Пароль</label>
+        <input id="accountSecretInput"
+               ng-model="self.secret"
+               type="password"
+               class="form-control"
+               placeholder="Пароль">
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Запомнить меня
+            </label>
+        </div>
+
+        <button ng-click="self.authenticate()"
+                class="btn btn-lg btn-primary btn-block">
+            Войти
+        </button>
+    </form>
+
+    <span ng-if="self.error">{{self.error}}</span>
+</div>

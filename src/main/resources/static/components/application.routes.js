@@ -19,11 +19,11 @@
                 }
             })
 
-            .state('root.login', {
-                url: 'login',
+            .state('root.logon', {
+                url: 'logon',
                 views: {
                     '@root': {
-                        component: 'loginView'
+                        component: 'logonView'
                     }
                 }
             })

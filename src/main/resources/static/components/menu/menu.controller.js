@@ -52,7 +52,7 @@
 
         self.deauthenticate = function () {
             authenticationService.deauthenticate();
-            $state.go('root.login');
+            $state.go('root.logon');
         };
 
         function handleStateUpdate(menuState) {

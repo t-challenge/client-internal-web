@@ -4,14 +4,14 @@
 
     angular
         .module('application.miscellaneous')
-        .controller('loginViewController', [
+        .controller('logonViewController', [
             '$state',
             'authenticationService',
             'authenticationContextService',
-            LoginViewController
+            LogonViewController
         ]);
 
-    function LoginViewController($state,
+    function LogonViewController($state,
                                  authenticationService,
                                  authenticationContextService) {
 

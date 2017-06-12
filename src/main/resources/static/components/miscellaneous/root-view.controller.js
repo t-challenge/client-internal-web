@@ -16,7 +16,7 @@
 
         self.$onInit = function () {
             if (!authenticationContextService.getAuthentication()) {
-                $state.go('root.login');
+                $state.go('root.logon');
             } else if ($state.is('root')) {
                 $state.go('root.authorized.statistic');
             }

@@ -93,6 +93,8 @@
                 }
             })
 
+            // --- TASKS ---
+
             .state('root.authorized.task', {
                 abstract: true,
                 url: 'tasks',
@@ -111,6 +113,26 @@
                     }
                 }
             })
+
+            .state('root.authorized.task.detailed', {
+                url: '/{id:[0-9]*}',
+                views: {
+                    '@root.authorized.task': {
+                        component: 'taskDetailedView'
+                    }
+                }
+            })
+
+            .state('root.authorized.task.new', {
+                url: '/new',
+                views: {
+                    '@root.authorized.task': {
+                        component: 'taskNewView'
+                    }
+                }
+            })
+
+            // --- WORKBOOKS ---
 
             .state('root.authorized.workbook', {
                 abstract: true,

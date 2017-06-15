@@ -4,9 +4,17 @@
 
     angular
         .module('application.task')
-        .controller('taskDetailedViewController', [TaskDetailedViewController]);
+        .controller('taskDetailedViewController', [
+            '$stateParams',
+            TaskDetailedViewController
+        ]);
 
-    function TaskDetailedViewController() {
+    function TaskDetailedViewController($stateParams) {
 
+        var self = this;
+
+        self.$onInit = function () {
+            self.id = $stateParams['id'];
+        };
     }
 })();

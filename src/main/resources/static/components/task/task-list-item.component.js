@@ -6,7 +6,7 @@
         .module('application.task')
         .component('taskListItem', {
             bindings: {
-                id: '@'
+                task: '<'
             },
             controller: 'taskListItemController',
             controllerAs: 'self',

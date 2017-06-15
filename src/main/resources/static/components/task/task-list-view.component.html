@@ -1,1 +1,26 @@
-Task List View
+<form>
+
+    <label for="taskTextInput" class="sr-only">Текст</label>
+    <input id="taskTextInput"
+           ng-model="self.taskText"
+           type="text"
+           class="form-control"
+           placeholder="">
+
+    <button ng-click="self.search()"
+            class="btn btn-primary btn-block"
+            autofocus>
+        Применить фильтр
+    </button>
+
+    <button ng-click="self.navigateNewTask()()"
+            class="btn btn-primary btn-block">
+        Создать
+    </button>
+</form>
+
+<div>
+    <ng-repeat ng-repeat="task in self.tasks">
+        <task-list-item task="task"></task-list-item>
+    </ng-repeat>
+</div>

@@ -33,11 +33,11 @@
                 });
         };
 
-        self.get = function (id) {
+        self.get = function (textcode) {
 
             return $http
 
-                .get(resolveUrl(id))
+                .get(resolveUrl(textcode))
 
                 .then(function (response) {
                     return response.data;
@@ -81,14 +81,14 @@
                 });
         };
 
-        var preResolvedUrl = urlResolverService.resolveKernelServiceUrl('tasks');
+        var preResolvedUrl = urlResolverService.resolveKernelServiceUrl('events');
 
-        function resolveUrl() {
+        function resolveUrl(textcode) {
             // TODO: replace with safe check
-            if (!id) {
+            if (!textcode) {
                 return preResolvedUrl;
             } else {
-                return [preResolvedUrl, id].join('/');
+                return [preResolvedUrl, textcode].join('/');
             }
         }
     }

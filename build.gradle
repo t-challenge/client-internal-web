@@ -12,6 +12,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
@@ -30,11 +31,6 @@ bootRun {
 
     addResources = true
     systemProperties = System.properties
-}
-
-war {
-
-    archiveName 'tchallenge-client-internal-web.war'
 }
 
 dependencies {

@@ -15,7 +15,7 @@
 
         self.navigateDetailedView = function () {
             $state.go('root.authorized.event.detailed', {
-                id: self.event.id
+                textcode: self.event.textcode
             });
         };
     }

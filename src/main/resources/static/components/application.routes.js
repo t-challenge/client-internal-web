@@ -74,6 +74,8 @@
                 }
             })
 
+            // --- EVENTS ---
+
             .state('root.authorized.event', {
                 abstract: true,
                 url: 'events',
@@ -89,6 +91,24 @@
                 views: {
                     '@root.authorized.event': {
                         component: 'eventListView'
+                    }
+                }
+            })
+
+            .state('root.authorized.event.detailed', {
+                url: '/{textcode}/detailed',
+                views: {
+                    '@root.authorized.event': {
+                        component: 'eventDetailedView'
+                    }
+                }
+            })
+
+            .state('root.authorized.event.new', {
+                url: '/new',
+                views: {
+                    '@root.authorized.event': {
+                        component: 'eventNewView'
                     }
                 }
             })

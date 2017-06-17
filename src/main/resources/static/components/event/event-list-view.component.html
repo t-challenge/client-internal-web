@@ -1,1 +1,26 @@
-Event List View
+<form>
+
+    <label for="eventTextInput" class="sr-only">Текст</label>
+    <input id="eventTextInput"
+           ng-model="self.eventText"
+           type="text"
+           class="form-control"
+           placeholder="">
+
+    <button ng-click="self.search()"
+            class="btn btn-primary btn-block"
+            autofocus>
+        Применить фильтр
+    </button>
+
+    <button ng-click="self.navigateNewEvent()()"
+            class="btn btn-primary btn-block">
+        Создать
+    </button>
+</form>
+
+<div>
+    <ng-repeat ng-repeat="event in self.events">
+        <event-list-item event="event"></event-list-item>
+    </ng-repeat>
+</div>

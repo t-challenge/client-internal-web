@@ -173,6 +173,15 @@
                 }
             })
 
+            .state('root.authorized.workbook.detailed', {
+                url: '/{id:[0-9]*}',
+                views: {
+                    '@root.authorized.workbook': {
+                        component: 'workbookDetailedView'
+                    }
+                }
+            })
+
             .state('root.authorized.account', {
                 abstract: true,
                 url: 'accounts',

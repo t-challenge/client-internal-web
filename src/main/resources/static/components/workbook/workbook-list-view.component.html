@@ -1,1 +1,21 @@
-Workbook List View
+<form>
+
+    <label for="workbookIdInput" class="sr-only">Текст</label>
+    <input id="workbookIdInput"
+           ng-model="self.workbookId"
+           type="text"
+           class="form-control"
+           placeholder="">
+
+    <button ng-click="self.search()"
+            class="btn btn-primary btn-block"
+            autofocus>
+        Применить фильтр
+    </button>
+</form>
+
+<div>
+    <ng-repeat ng-repeat="workbook in self.workbooks">
+        <workbook-list-item workbook="workbook"></workbook-list-item>
+    </ng-repeat>
+</div>

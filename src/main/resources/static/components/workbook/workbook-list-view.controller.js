@@ -4,9 +4,30 @@
 
     angular
         .module('application.workbook')
-        .controller('workbookListViewController', [WorkbookListViewController]);
+        .controller('workbookListViewController', [
+            '$state',
+            'workbookService',
+            WorkbookListViewController
+        ]);
 
-    function WorkbookListViewController() {
+    function WorkbookListViewController($state,
+                                        workbookService) {
 
+        var self = this;
+
+        self.$onInit = function () {
+            self.search();
+        };
+
+        self.search = function () {
+
+            workbookService
+
+                .search({})
+
+                .then(function (searchResult) {
+                    self.workbooks = searchResult.items;
+                });
+        };
     }
 })();

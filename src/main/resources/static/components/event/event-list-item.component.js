@@ -6,7 +6,7 @@
         .module('application.event')
         .component('eventListItem', {
             bindings: {
-                task: '<'
+                event: '<'
             },
             controller: 'eventListItemController',
             controllerAs: 'self',
